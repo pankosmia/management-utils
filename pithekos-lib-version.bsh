@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+packages=`find ../* -iname package.json | grep -v node_modules | grep -v pankosmia-web`
+while IFS= read -r line
+  do found_pithekos=`grep "\"pithekos-lib\":" $line`
+  if [[ ! -z "$found_pithekos" ]]; then
+    printf '%-30s' `echo -n  "$line" | cut -d/ -f2`:
+    echo `echo "$found_pithekos" | xargs`
+  fi
+done <<< "$packages"

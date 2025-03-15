@@ -1,0 +1,4 @@
+BOOL=`curl -s "http://localhost:8000/net/status" | egrep -o "true|false" | tr '[:lower:]' '[:upper:]'`
+for i in `seq 500`; do echo -n $BOOL; echo -n " "; done
+
+
