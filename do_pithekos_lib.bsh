@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+watch -n10 -t ./pithekos_lib_version.bsh
